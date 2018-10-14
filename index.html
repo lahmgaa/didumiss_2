@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1014_2</title>
+	<style type="text/css">
+		body{background-color: black;}
+
+		#did { width: 1000px; height: 230px; font-size: 7em; background: red; text-decoration-color: blue; position: relative; margin: auto; margin-top: 300px; line-height: 200px; font-weight: bold; text-align: center; z-index: 5;
+			animation: did 0.5s infinite; }
+		#did:hover {cursor: pointer;}
+		@keyframes did {
+			0% {background-color : red;}
+			20% {background-color: yellow;}
+			40% {background-color: blue;}
+			60% {background-color: green;}
+			80% {background-color: purple;}
+			100% {background-color: #00E1FF;}
+			}
+
+		#miss {width: 700px; height: 400px; position: absolute; z-index: 1; top: 30px; left: 50px; opacity: 0;
+			animation: miss 1.5s infinite; animation-delay: 0.5s;}
+		@keyframes miss {
+			0% {opacity: 0;}
+			50% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+
+		#miss1 {width: 500px; height: 320px; position: absolute; z-index: 1; top: 50px; left: 1300px; opacity: 0;
+			animation: miss1 2s infinite; animation-delay: 1.5s;}
+		@keyframes miss1 {
+			0% {opacity: 0;}
+			50% {opacity: 1;}
+			100% {opacity: 1;}
+		}
+
+		#miss2 {width: 500px; height: 281px; position: absolute; z-index: 1; top: 400px; left: 200px; opacity: 0;
+		animation: miss2 2.5s infinite; animation-delay: 2.3s;}
+		@keyframes miss2 {
+			0% {opacity: 0;}
+			30% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+
+		#miss3 {width: 500px; height: 247px; position: absolute; z-index: 1; top: 600px; left: 1100px; opacity: 0;
+			animation: miss3 1.8s infinite; animation-delay: 2.5s;}
+		@keyframes miss3 {
+			0% {opacity: 0;}
+			30% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+
+		#miss4 {width: 220px; height: 265px; position: absolute; z-index: 1; top: 500px; left: 900px; opacity: 0;
+			animation: miss4 2.7s infinite;  animation-delay: 1.5s;}
+		@keyframes miss4 {
+			0% {opacity: 0;}
+			30% {opacity: 0;}
+			100% {opacity: 1;}
+			}
+
+
+		#miss5 {width: 300px; height: 360px; position: absolute; z-index: 1; top: 700px; left: 500px; opacity: 0;
+		animation: miss5 1s infinite; animation-delay: 2s;}
+		@keyframes miss5 {
+			0% {opacity: 0;}
+			30% {opacity: 0;}
+			100% {opacity: 1;}
+			}
+
+
+		#me {width: window-width; height: 50px; font-weight: bold;  position: absolute; z-index: 2; font-size: 2em; top: 0; left: 0; text-align: center; opacity: 0;
+			animation: me 1.5s infinite; margin: auto; 
+			animation-delay: 5s;}
+		@keyframes me {
+			0% {color : red; opacity: 1;}
+			20% {color: yellow; opacity: 0.2;}
+			40% {color: blue; opacity: 1;}
+			60% {color: green; opacity: 0.4}
+			80% {color: purple; opacity: 0.8}
+			100% {color: #00E1FF; opacity: 1; }
+		}	
+
+		
+
+	</style>
+</head>
+<body>
+	<div id="did">
+		Did you miss Me? 
+	</div>
+
+	<img id="miss" src="miss.gif">
+
+	<img id="miss1" src="miss1.gif" >
+
+	<img id="miss2" src="miss2.gif" >
+
+	<img id="miss3" src="miss3.gif" >
+
+	<img id="miss4" src="miss4.gif" >
+
+	<img id="miss5" src="miss5.gif" >
+
+	<div id="me">did you miss me?   did you miss me?   did you miss me?   did you miss me?   did you miss me?   did you miss me?   did you miss me?</div>
+
+	<audio id="dd" cotrols loop>
+		<source src="dd.mp3" type="audio/mpeg">
+	</audio>
+
+	<script type="text/javascript">
+		
+		var total = 0;
+		for (var i = 0; i< 10; i++){
+			var a = document.getElementById("me");
+			var b = a.cloneNode(true);
+			b.style.top =  i*100 + "px";
+			b.style.animationDelay =3+  i*0.3 + "s";
+
+			document.body.appendChild(b);
+			console.log(window.innerWidth, window.innerHeight);
+		}
+
+		
+
+
+	</script>
+
+	<script type="text/javascript">
+		
+		var toggle = "off";
+		did.onclick = function(){
+			if(toggle == "off"){
+				dd.play();
+				toggle = "on";
+				
+			}else{
+				dd.load();
+				toggle = "off";
+				
+			}
+		}
+		
+
+
+	</script>
+	
+</body>
+</html>
